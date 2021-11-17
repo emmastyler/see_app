@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 .navbar {
   width: 100%;
   color: white;
@@ -5,10 +7,9 @@
   position: fixed;
   top: 0;
   z-index: 999;
-  
-  background: linear-gradient(to top, transparent 0%, rgba(163, 157, 157, 0.3) 50%);
+  background: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.3) 50%);
 
-  &.scrolled{
+  &.scrolled {
     background-color: var(--main-color);
   }
 
@@ -26,11 +27,25 @@
       img {
         height: 25px;
         margin-right: 40px;
+
+        @include mobile {
+          display: none;
+        }
       }
 
       span {
         margin-right: 20px;
         cursor: pointer;
+
+        @include tablet {
+          display: none;
+        }
+
+        &.navbarmainLinks {
+          @include tablet {
+            display: block;
+          }
+        }
       }
     }
 
